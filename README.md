@@ -1,5 +1,6 @@
-<div align="center">
+
 # 🎮 Recalbox Backup Script for Windows
+<div align="center">
 
 ![Windows](https://img.shields.io/badge/Windows-0078D6?style=for-the-badge&logo=windows&logoColor=white)
 ![Batch](https://img.shields.io/badge/batch-%23121011.svg?style=for-the-badge&logo=windows-terminal&logoColor=white)
