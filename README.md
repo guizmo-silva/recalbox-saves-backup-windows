@@ -1,5 +1,5 @@
-
 # 🎮 Recalbox Backup Script for Windows
+
 <div align="center">
 
 ![Windows](https://img.shields.io/badge/Windows-0078D6?style=for-the-badge&logo=windows&logoColor=white)
@@ -19,6 +19,7 @@
 ## 📋 Índice / Index / Índice
 
 ### 🇧🇷 Português
+
 - [Sobre o Projeto](#-sobre-o-projeto)
 - [Funcionalidades](#-funcionalidades)
 - [Pré-requisitos](#-pré-requisitos)
@@ -27,6 +28,7 @@
 - [Ferramentas Utilizadas](#-ferramentas-utilizadas)
 
 ### 🇺🇸 English
+
 - [About the Project](#-about-the-project)
 - [Features](#-features)
 - [Prerequisites](#-prerequisites)
@@ -35,6 +37,7 @@
 - [Tools Used](#-tools-used)
 
 ### 🇪🇸 Español
+
 - [Sobre el Proyecto](#-sobre-el-proyecto)
 - [Características](#-características)
 - [Prerrequisitos](#-prerrequisitos)
@@ -48,7 +51,7 @@
 
 ### 🎯 Sobre o Projeto
 
-O **Recalbox Backup Script for Windows** é uma solução completa e intuitiva para gerenciar os saves dos seus jogos no Recalbox diretamente do Windows. Com interface multilíngue e detecção automática de ferramentas do sistema, este script oferece uma experiência simples e confiável para proteger seus progressos de jogo.
+Script criado para facilitar o processo de backup da pasta de saves do Recalbox. Útil caso você precise formatar seu cartão SD, atualizar o sistema ou simplesmente queira manter uma cópia segura de seus memory cards e save states.
 
 ### ✨ Funcionalidades
 
@@ -71,37 +74,32 @@ O **Recalbox Backup Script for Windows** é uma solução completa e intuitiva p
 
 O script utiliza ferramentas nativas do Windows (nenhuma instalação adicional necessária):
 
-| Ferramenta | Função | Disponibilidade |
-|------------|--------|----------------|
-| **Robocopy** | Cópia principal com suporte a estruturas complexas | Windows Vista+ |
-| **XCOPY** | Fallback para cópia de arquivos | Todas as versões |
-| **PowerShell** | Cores e operações avançadas | Windows 7+ |
-| **NET** | Verificação de compartilhamentos SMB | Nativo |
-| **PING** | Teste de conectividade | Nativo |
+
+| Ferramenta     | Função                                            | Disponibilidade   |
+| ---------------- | ----------------------------------------------------- | ------------------- |
+| **Robocopy**   | Cópia principal com suporte a estruturas complexas | Windows Vista+    |
+| **XCOPY**      | Fallback para cópia de arquivos                    | Todas as versões |
+| **PowerShell** | Cores e operações avançadas                      | Windows 7+        |
+| **NET**        | Verificação de compartilhamentos SMB              | Nativo            |
+| **PING**       | Teste de conectividade                              | Nativo            |
 
 > **💡 Vantagem:** Todas as ferramentas já estão incluídas no Windows! Não precisa instalar nada adicional.
 
 ### 🚀 Instalação
 
-1. **Baixe o script:**
-```cmd
-# Opção 1: Download direto
-https://raw.githubusercontent.com/seu-usuario/recalbox-backup-windows/main/recalbox_backup.bat
-
-# Opção 2: Clone o repositório
-git clone https://github.com/seu-usuario/recalbox-backup-windows.git
-```
-
+1. **[Baixe o script](https://github.com/guizmo-silva/recalbox-saves-backup-windows/releases/tag/v1.0.0)**
 2. **Execute o script:**
+
+- Duplo clique no arquivo recalbox_backup.bat
+- OU execute via linha de comando:
+
 ```cmd
-# Duplo clique no arquivo recalbox_backup.bat
-# OU execute via linha de comando:
 recalbox_backup.bat
 ```
 
 ### 📖 Como Usar
 
-1. **Execute o script** com duplo clique
+1. **Execute o script**
 2. **Escolha seu idioma** preferido (Português/Inglês/Espanhol)
 3. **Use o menu** para suas operações:
    - **Opção 1**: Verificar dependências do sistema
@@ -111,6 +109,7 @@ recalbox_backup.bat
    - **Opção 5**: Sair
 
 #### 💾 Estrutura do Backup:
+
 ```
 C:\Meus Backups\
 └── recalbox_saves_backup_20240101_1430\
@@ -127,16 +126,19 @@ C:\Meus Backups\
 ### 🛠️ Ferramentas Utilizadas
 
 #### **Robocopy (Recomendado)**
+
 - **Função**: Cópia robusta de arquivos e pastas
 - **Vantagens**: Suporte a estruturas complexas, múltiplos threads, recuperação de erros
 - **Parâmetros**: `/E /COPYALL /R:1 /W:1 /MT:4`
 
 #### **XCOPY (Fallback)**
+
 - **Função**: Cópia tradicional de arquivos
 - **Vantagens**: Disponível em todas as versões do Windows
 - **Parâmetros**: `/E /I /H /Y /C /Q`
 
 #### **PowerShell (Opcional)**
+
 - **Função**: Cores na interface e operações avançadas
 - **Vantagens**: Melhor experiência visual
 - **Fallback**: Interface sem cores se não disponível
@@ -146,23 +148,31 @@ C:\Meus Backups\
 #### Problemas Comuns:
 
 **❌ "Não foi possível conectar ao Recalbox"**
+
 - Verifique se o Recalbox está ligado e conectado à rede
 - Confirme que seu PC está na mesma rede
 - Teste: `ping RECALBOX` no CMD
 
 **❌ "Pasta 'saves' não encontrada"**
+
 - Habilite o compartilhamento de rede no Recalbox
 - Vá em: Sistema → Configurações de Rede → Ativar SAMBA
 - Teste acessar `\\RECALBOX` no Explorer
 
 **❌ "Erro na criação do arquivo"**
+
 - O script usa múltiplos métodos automaticamente
 - Estruturas complexas são tratadas com cópia manual
 - Verifique permissões de escrita no destino
 
 **❌ "Comando não encontrado"**
+
 - Execute a verificação de dependências (Opção 1)
 - Todas as ferramentas são nativas do Windows
+
+**❌ "Erro 0x80070035 no Windows ao tentar acessar `\\RECALBOX` pelo explorer"**
+
+- [Siga os passos desse post](https://answers.microsoft.com/en-us/windows/forum/all/how-to-fix-network-error-0x80070035-on-windows-11/9a22d852-a1b9-421a-8a59-eace7ab970eb)
 
 ---
 
@@ -170,7 +180,7 @@ C:\Meus Backups\
 
 ### 🎯 About the Project
 
-The **Recalbox Backup Script for Windows** is a complete and intuitive solution for managing your Recalbox game saves directly from Windows. With multilingual interface and automatic system tools detection, this script offers a simple and reliable experience to protect your game progress.
+Script created to facilitate the backup process of the Recalbox saves folder. Useful if you need to format your SD card, update the system, or simply want to keep a safe copy of your memory cards and save states.
 
 ### ✨ Features
 
@@ -193,37 +203,34 @@ The **Recalbox Backup Script for Windows** is a complete and intuitive solution 
 
 The script uses native Windows tools (no additional installation required):
 
-| Tool | Function | Availability |
-|------|----------|--------------|
-| **Robocopy** | Primary copy with complex structure support | Windows Vista+ |
-| **XCOPY** | Fallback for file copying | All versions |
-| **PowerShell** | Colors and advanced operations | Windows 7+ |
-| **NET** | SMB share verification | Native |
-| **PING** | Connectivity testing | Native |
+
+| Tool           | Function                                    | Availability   |
+| ---------------- | --------------------------------------------- | ---------------- |
+| **Robocopy**   | Primary copy with complex structure support | Windows Vista+ |
+| **XCOPY**      | Fallback for file copying                   | All versions   |
+| **PowerShell** | Colors and advanced operations              | Windows 7+     |
+| **NET**        | SMB share verification                      | Native         |
+| **PING**       | Connectivity testing                        | Native         |
 
 > **💡 Advantage:** All tools are already included in Windows! No additional installation needed.
 
 ### 🚀 Installation
 
-1. **Download the script:**
-```cmd
-# Option 1: Direct download
-https://raw.githubusercontent.com/your-username/recalbox-backup-windows/main/recalbox_backup.bat
+### USAGE INSTRUCTIONS:
 
-# Option 2: Clone repository
-git clone https://github.com/your-username/recalbox-backup-windows.git
-```
-
+1. **[Download the script](https://github.com/guizmo-silva/recalbox-saves-backup-windows/releases/tag/v1.0.0)**
 2. **Run the script:**
+
+- Double-click on the recalbox_backup.bat file
+- OR run via command line:
+
 ```cmd
-# Double-click the recalbox_backup.bat file
-# OR run via command line:
 recalbox_backup.bat
 ```
 
 ### 📖 How to Use
 
-1. **Run the script** by double-clicking
+1. **Run the script**
 2. **Choose your preferred language** (Portuguese/English/Spanish)
 3. **Use the menu** for your operations:
    - **Option 1**: Check system dependencies
@@ -233,6 +240,7 @@ recalbox_backup.bat
    - **Option 5**: Exit
 
 #### 💾 Backup Structure:
+
 ```
 C:\My Backups\
 └── recalbox_saves_backup_20240101_1430\
@@ -249,16 +257,19 @@ C:\My Backups\
 ### 🛠️ Tools Used
 
 #### **Robocopy (Recommended)**
+
 - **Function**: Robust file and folder copying
 - **Advantages**: Complex structure support, multi-threading, error recovery
 - **Parameters**: `/E /COPYALL /R:1 /W:1 /MT:4`
 
 #### **XCOPY (Fallback)**
+
 - **Function**: Traditional file copying
 - **Advantages**: Available on all Windows versions
 - **Parameters**: `/E /I /H /Y /C /Q`
 
 #### **PowerShell (Optional)**
+
 - **Function**: Interface colors and advanced operations
 - **Advantages**: Better visual experience
 - **Fallback**: Colorless interface if not available
@@ -268,23 +279,30 @@ C:\My Backups\
 #### Common Issues:
 
 **❌ "Could not connect to Recalbox"**
+
 - Check if Recalbox is powered on and connected to network
 - Confirm your PC is on the same network
 - Test: `ping RECALBOX` in CMD
 
 **❌ "'saves' folder not found"**
+
 - Enable network sharing on Recalbox
 - Go to: System → Network Settings → Enable SAMBA
 - Test accessing `\\RECALBOX` in Explorer
 
 **❌ "File creation error"**
+
 - Script uses multiple methods automatically
 - Complex structures are handled with manual copying
 - Check write permissions on destination
 
 **❌ "Command not found"**
+
 - Run dependency check (Option 1)
 - All tools are native to Windows
+
+**❌ "Error 0x80070035 on Windows when trying to access **`\\RECALBOX`** through explorer"**
+- [Follow the steps in this post](https://answers.microsoft.com/en-us/windows/forum/all/how-to-fix-network-error-0x80070035-on-windows-11/9a22d852-a1b9-421a-8a59-eace7ab970eb)
 
 ---
 
@@ -292,7 +310,7 @@ C:\My Backups\
 
 ### 🎯 Sobre el Proyecto
 
-El **Recalbox Backup Script for Windows** es una solución completa e intuitiva para gestionar las partidas guardadas de tus juegos en Recalbox directamente desde Windows. Con interfaz multiidioma y detección automática de herramientas del sistema, este script ofrece una experiencia simple y confiable para proteger tu progreso de juego.
+Script creado para facilitar el proceso de respaldo de la carpeta de guardados de Recalbox. Útil en caso de que necesites formatear tu tarjeta SD, actualizar el sistema o simplemente quieras mantener una copia segura de tus memory cards y save states.
 
 ### ✨ Características
 
@@ -315,37 +333,32 @@ El **Recalbox Backup Script for Windows** es una solución completa e intuitiva 
 
 El script utiliza herramientas nativas de Windows (no requiere instalación adicional):
 
-| Herramienta | Función | Disponibilidad |
-|-------------|---------|----------------|
-| **Robocopy** | Copia principal con soporte a estructuras complejas | Windows Vista+ |
-| **XCOPY** | Fallback para copia de archivos | Todas las versiones |
-| **PowerShell** | Colores y operaciones avanzadas | Windows 7+ |
-| **NET** | Verificación de recursos compartidos SMB | Nativo |
-| **PING** | Prueba de conectividad | Nativo |
+
+| Herramienta    | Función                                            | Disponibilidad      |
+| ---------------- | ----------------------------------------------------- | --------------------- |
+| **Robocopy**   | Copia principal con soporte a estructuras complejas | Windows Vista+      |
+| **XCOPY**      | Fallback para copia de archivos                     | Todas las versiones |
+| **PowerShell** | Colores y operaciones avanzadas                     | Windows 7+          |
+| **NET**        | Verificación de recursos compartidos SMB           | Nativo              |
+| **PING**       | Prueba de conectividad                              | Nativo              |
 
 > **💡 Ventaja:** ¡Todas las herramientas ya están incluidas en Windows! No necesita instalación adicional.
 
 ### 🚀 Instalación
 
-1. **Descarga el script:**
-```cmd
-# Opción 1: Descarga directa
-https://raw.githubusercontent.com/tu-usuario/recalbox-backup-windows/main/recalbox_backup.bat
-
-# Opción 2: Clonar repositorio
-git clone https://github.com/tu-usuario/recalbox-backup-windows.git
-```
-
+1. **[Descarga el script](https://github.com/guizmo-silva/recalbox-saves-backup-windows/releases/tag/v1.0.0)**
 2. **Ejecuta el script:**
+
+- Doble clic en el archivo recalbox_backup.bat
+- O ejecútalo vía línea de comandos:
+
 ```cmd
-# Doble clic en el archivo recalbox_backup.bat
-# O ejecuta via línea de comandos:
 recalbox_backup.bat
 ```
 
 ### 📖 Cómo Usar
 
-1. **Ejecuta el script** con doble clic
+1. **Ejecuta el script**
 2. **Elige tu idioma** preferido (Portugués/Inglés/Español)
 3. **Usa el menú** para tus operaciones:
    - **Opción 1**: Verificar dependencias del sistema
@@ -355,6 +368,7 @@ recalbox_backup.bat
    - **Opción 5**: Salir
 
 #### 💾 Estructura del Respaldo:
+
 ```
 C:\Mis Respaldos\
 └── recalbox_saves_backup_20240101_1430\
@@ -371,16 +385,19 @@ C:\Mis Respaldos\
 ### 🛠️ Herramientas Utilizadas
 
 #### **Robocopy (Recomendado)**
+
 - **Función**: Copia robusta de archivos y carpetas
 - **Ventajas**: Soporte a estructuras complejas, multi-threading, recuperación de errores
 - **Parámetros**: `/E /COPYALL /R:1 /W:1 /MT:4`
 
 #### **XCOPY (Fallback)**
+
 - **Función**: Copia tradicional de archivos
 - **Ventajas**: Disponible en todas las versiones de Windows
 - **Parámetros**: `/E /I /H /Y /C /Q`
 
 #### **PowerShell (Opcional)**
+
 - **Función**: Colores en la interfaz y operaciones avanzadas
 - **Ventajas**: Mejor experiencia visual
 - **Fallback**: Interfaz sin colores si no está disponible
@@ -390,23 +407,30 @@ C:\Mis Respaldos\
 #### Problemas Comunes:
 
 **❌ "No se pudo conectar a Recalbox"**
+
 - Verifica que Recalbox esté encendido y conectado a la red
 - Confirma que tu PC está en la misma red
 - Prueba: `ping RECALBOX` en CMD
 
 **❌ "Carpeta 'saves' no encontrada"**
+
 - Habilita el compartir de red en Recalbox
 - Ve a: Sistema → Configuración de Red → Activar SAMBA
 - Prueba acceder a `\\RECALBOX` en el Explorer
 
 **❌ "Error en la creación del archivo"**
+
 - El script usa múltiples métodos automáticamente
 - Estructuras complejas se manejan con copia manual
 - Verifica permisos de escritura en el destino
 
 **❌ "Comando no encontrado"**
+
 - Ejecuta la verificación de dependencias (Opción 1)
 - Todas las herramientas son nativas de Windows
+
+**❌ "Error 0x80070035 en Windows al intentar acceder a **`\\RECALBOX`** mediante el explorador"**
+- [Sigue los pasos de esta publicación](https://answers.microsoft.com/en-us/windows/forum/all/how-to-fix-network-error-0x80070035-on-windows-11/9a22d852-a1b9-421a-8a59-eace7ab970eb)
 
 ---
 
@@ -430,7 +454,7 @@ Este proyecto está bajo la licencia MIT. Ver el archivo `LICENSE` para más det
 
 ## 🔗 Links Relacionados / Related Links / Enlaces Relacionados
 
-- 🐧 [Versão Linux](https://github.com/seu-usuario/recalbox-backup-script) - Script para sistemas Linux
+- 🐧 [Versão Linux](https://github.com/guizmo-silva/recalbox-saves-backup-linux) - Script para sistemas Linux
 - 🎮 [Recalbox Official](https://www.recalbox.com/) - Site oficial do Recalbox
 - 📚 [Documentação](https://wiki.recalbox.com/) - Wiki oficial do Recalbox
 
