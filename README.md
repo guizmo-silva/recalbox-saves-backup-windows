@@ -1,4 +1,4 @@
-# 🎮 Recalbox Backup Script for Windows
+# 🎮 Recalbox Save files Backup Script for Windows
 
 <div align="center">
 
