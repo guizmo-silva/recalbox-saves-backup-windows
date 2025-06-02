@@ -58,9 +58,7 @@ Script criado para facilitar o processo de backup da pasta de saves do Recalbox.
 - 🔍 **Verificação de Dependências**: Detecta automaticamente ferramentas disponíveis no Windows
 - 📡 **Verificação de Conectividade**: Testa conexão com o Recalbox na rede local
 - 💾 **Backup Completo**: Cria backups organizados com timestamp automático
-- 🔄 **Restauração Inteligente**: Restaura saves seletivamente com múltiplos métodos
 - 🌍 **Interface Multilíngue**: Português, Inglês e Espanhol
-- 🎨 **Interface Colorida**: Suporte a cores no Windows 10/11 com fallback
 - 🛡️ **Múltiplos Fallbacks**: Robocopy → XCOPY → Cópia manual para máxima compatibilidade
 
 ### 📋 Pré-requisitos
@@ -187,9 +185,7 @@ Script created to facilitate the backup process of the Recalbox saves folder. Us
 - 🔍 **Dependency Check**: Automatically detects available Windows tools
 - 📡 **Connectivity Verification**: Tests connection with Recalbox on local network
 - 💾 **Complete Backup**: Creates organized backups with automatic timestamp
-- 🔄 **Smart Restoration**: Selectively restores saves with multiple methods
 - 🌍 **Multilingual Interface**: Portuguese, English, and Spanish
-- 🎨 **Colored Interface**: Color support on Windows 10/11 with fallback
 - 🛡️ **Multiple Fallbacks**: Robocopy → XCOPY → Manual copy for maximum compatibility
 
 ### 📋 Prerequisites
@@ -317,9 +313,7 @@ Script creado para facilitar el proceso de respaldo de la carpeta de guardados d
 - 🔍 **Verificación de Dependencias**: Detecta automáticamente herramientas disponibles en Windows
 - 📡 **Verificación de Conectividad**: Prueba conexión con Recalbox en la red local
 - 💾 **Respaldo Completo**: Crea respaldos organizados con timestamp automático
-- 🔄 **Restauración Inteligente**: Restaura saves selectivamente con múltiples métodos
 - 🌍 **Interfaz Multiidioma**: Portugués, Inglés y Español
-- 🎨 **Interfaz Colorida**: Soporte de colores en Windows 10/11 con fallback
 - 🛡️ **Múltiples Fallbacks**: Robocopy → XCOPY → Copia manual para máxima compatibilidad
 
 ### 📋 Prerrequisitos
